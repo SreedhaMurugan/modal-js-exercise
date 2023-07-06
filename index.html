@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <button id="buttonClick">Click the button to open modal</button>
+    <div id="openModal" class="modal">
+        <div class="modal-content">
+            <div class="content">
+                <div class="image">
+                    <img src="alert image1.png"></img>
+                </div>
+                <div class="account-content">
+
+                    <div>
+                        <h3>Deactivate Account</h3>
+                    </div>
+                    <div class="paragraph-align">
+                        <p>Are you sure you want to deactivate your account? All of your data will be permanetly
+                            removed.This
+                            action cannot be undone</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="button-content">
+                <div>
+                    <button class="cancel-button" onClick="cancelModal()">Cancel</button>
+                </div>
+                <div>
+                    <button class="deactivate-button">Deactivate</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+
+        var modal = document.getElementById("openModal");
+        var button = document.getElementById("buttonClick");
+        var close = document.getElementsByClassName("close")[0];
+
+        button.onclick = function () {
+            modal.style.display = "block";
+        }
+
+        close.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        function cancelModal() {
+            modal.style.display = "none";
+        }
+    </script>
+  </body>
+</html>
